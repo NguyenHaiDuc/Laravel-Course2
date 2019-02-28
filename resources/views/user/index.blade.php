@@ -22,9 +22,9 @@
 				<td><?php echo ++$i; ?></td>
 				<td>{{ $user->name }}</td>
 				<td>{{ $user->email }}</td>
-				<td><a href="{{'users'}}/{{'user->id'}}/edit">Edit</a></td>
+				<td><a href="{{ url("users/$user->id/edit") }}">Edit</a></td>
 				<td>
-					<form action="{{url('users/'.$user->id)}}" method="POST">
+					<form action="{{url("users/$user->id")}}" method="POST">
 						{{csrf_field()}}
 						{{method_field('DELETE')}}
 
